@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#e8e5f4" name="theme-color"/><title>となりちゃんの締切日和</title><style>
 :root{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;color:#363447;background:#f5f3fa}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 10%,#fff 0,transparent 40%),linear-gradient(145deg,#f3effa,#e6edf7)}.app{max-width:930px;margin:auto;padding:20px 16px 35px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{font-size:13px;letter-spacing:.13em;color:#82749e;font-weight:800}.top h1{font-size:clamp(22px,4vw,31px);margin:5px 0 16px}.pill{font-size:12px;background:#fff;border:1px solid #e0daef;border-radius:40px;padding:9px 12px;color:#716686}.panel{border:1px solid #e4deef;border-radius:24px;background:#ffffffc9;box-shadow:0 14px 40px #7870a51b;overflow:hidden}.scene{display:grid;grid-template-columns:minmax(210px,42%) 1fr;min-height:510px}.character{position:relative;background:radial-gradient(circle at 50% 42%,#fff 0%,#f0ebf8 58%,#e8e3f3 100%);display:flex;align-items:end;justify-content:center;overflow:hidden;min-height:440px}.character:before{content:"✦  ·   ✧";position:absolute;top:25px;color:#b9acd2;font-size:25px;letter-spacing:20px}.character img{width:100%;height:100%;max-height:510px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 8px 8px #66577e24);transition:opacity .15s}.character button{position:absolute;inset:0;border:0;background:transparent;cursor:pointer}.character .hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:11px;white-space:nowrap;background:#ffffffde;padding:7px 12px;border-radius:20px;color:#7a6c95;pointer-events:none}.right{padding:26px 25px;display:flex;flex-direction:column;gap:18px;justify-content:center}.eyebrow{color:#8e83a6;font-size:12px;font-weight:800;letter-spacing:.1em}.count{font-size:clamp(29px,5vw,48px);font-weight:900;letter-spacing:-.04em;color:#625287;line-height:1.3}.sub{font-size:13px;color:#8a8496}.speech{position:relative;background:#fff;border:2px solid #e3dced;border-radius:19px;padding:21px 19px;min-height:150px;font-size:16px;font-weight:600;line-height:1.9;display:flex;align-items:center}.speech:before{content:"";position:absolute;left:-11px;top:48px;width:17px;height:17px;background:white;border-left:2px solid #e3dced;border-bottom:2px solid #e3dced;transform:rotate(45deg)}button{font:inherit;cursor:pointer}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border-radius:14px;border:1px solid #dcd5e9;padding:12px 15px;background:white;color:#63567e;font-weight:800}.btn.primary{background:#76649e;border-color:#76649e;color:#fff}.btn:hover{filter:brightness(.97)}.settings{margin-top:16px;padding:22px 24px}.settings h2{font-size:16px;margin:0 0 15px}.fields{display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:12px}.field{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:#766c88}input{font:inherit;min-width:0;width:100%;padding:12px;border:1px solid #dcd5e9;border-radius:12px;background:white;color:#373347}.foot{font-size:12px;color:#8b829b;text-align:center;margin-top:18px}.small{font-size:12px;color:#8b829b}.toast{min-height:18px;color:#6b5b90;font-size:12px}@media(max-width:650px){.app{padding:14px 11px 28px}.scene{grid-template-columns:1fr;min-height:0}.character{height:350px;min-height:0}.character img{max-height:350px}.right{padding:17px 17px 20px;gap:12px}.speech{min-height:116px;font-size:15px;padding:16px}.speech:before{top:-10px;left:50%;border:0;border-left:2px solid #e3dced;border-top:2px solid #e3dced}.fields{grid-template-columns:1fr 1fr}.fields button{grid-column:1/-1}.settings{padding:17px}.top h1{margin-bottom:12px}}
  .questionArea{padding:14px;background:#f7f4fc;border:1px solid #e3dced;border-radius:15px;display:flex;flex-direction:column;gap:9px}.questionArea[hidden]{display:none}.questionArea label{font-size:12px;font-weight:800;color:#716686}.questionArea select{width:100%;padding:11px;border:1px solid #dcd5e9;border-radius:11px;background:#fff;color:#363447;font:inherit}.questionArea .btn{align-self:flex-start} 
@@ -204,7 +205,32 @@
 #tabMore .backupActions .btn{display:block;width:100%;max-width:none;min-height:46px;padding:10px 12px;font-size:14px;white-space:normal;text-align:center}
 #tabMore .backupNotice{font-size:12px;line-height:1.6;color:#81798c;margin:12px 0 0}
 @media(min-width:620px){#tabMore .backupActions{grid-template-columns:1fr 1fr}}
-</style></head><body><main class="app"><header class="top"><div><div class="brand">TONARI-CHAN · DEADLINE COMPANION</div><h1>となりちゃんの締切日和</h1></div></header><nav aria-label="画面の切り替え" class="appTabs" role="tablist"><button aria-controls="tabHome" aria-selected="true" class="appTab active" data-tab="tabHome" id="tabBtnHome" role="tab" type="button">🏠 ホーム</button><button aria-controls="tabPlans" aria-selected="false" class="appTab" data-tab="tabPlans" id="tabBtnPlans" role="tab" type="button">📅 予定・しおり</button><button aria-controls="tabDiary" aria-selected="false" class="appTab" data-tab="tabDiary" id="tabBtnDiary" role="tab" type="button">📖 となりの日記</button><button aria-controls="tabMore" aria-selected="false" class="appTab" data-tab="tabMore" id="tabBtnMore" role="tab" type="button">❔ ヒント・セーブ</button></nav><div aria-labelledby="tabBtnHome" class="tabPage" id="tabHome" role="tabpanel"><section class="panel scene"><div class="character"><div aria-label="選択中の予定と締切" class="cornerDeadline"><div class="eyebrow" id="deadlineName">次の締切</div><div class="count" id="countdown">日付を設定してね</div><div class="sub" id="dateLabel">あなたの予定をお隣から見守ります</div></div><button aria-controls="planQuick" aria-expanded="false" class="cornerPeekToggle" id="cornerPeekToggle" type="button">☑ 準備・メモ</button><img alt="となりちゃんの立ち絵" id="sprite"/><button aria-label="となりちゃんに話しかける" id="tapCharacter"></button><div aria-label="お茶会の操作" class="faceTeaChoices" hidden="" id="faceTeaChoices">
+</style><style id="calendarDateEnhancement">
+.todayDisplay{margin-top:5px;font-size:12px;letter-spacing:.03em;color:#79668b;font-weight:650}
+.datePickerField{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:5px}
+.datePickerField input[type="date"]{flex:1 1 150px;min-width:0;width:auto;max-width:100%;box-sizing:border-box;color-scheme:light}
+.dateCalendarButton{flex:0 1 auto;border:1px solid #c9b6d6;border-radius:12px;background:#f7eefb;color:#604c77;font:inherit;font-size:12px;font-weight:700;padding:10px 12px;cursor:pointer;white-space:nowrap}
+.dateCalendarButton:focus-visible{outline:3px solid #a77fc5;outline-offset:2px}
+@media(max-width:390px){.dateCalendarButton{width:100%;white-space:normal}}
+</style><style id="layoutPolishClock2026">
+/* 2026-11-03: 予定編集欄を縦に整列し、ボタンの高さを揃える */
+#tabPlans .settings{min-width:0;overflow:hidden}
+#tabPlans .settings > .fields{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:stretch!important;gap:12px!important}
+#tabPlans .settings > .fields > .field{grid-column:1/-1!important;min-width:0!important;display:flex!important;flex-direction:column!important;gap:7px!important;align-items:stretch!important;font-size:13px!important}
+#tabPlans .settings > .fields > .field input{display:block!important;min-height:48px!important;width:100%!important;box-sizing:border-box!important;margin:0!important}
+#tabPlans .settings > .fields > .field .fieldLabel{font:inherit;color:inherit;line-height:1.5}
+#tabPlans .datePickerField{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:9px!important;align-items:stretch!important;margin:0!important;min-width:0!important}
+#tabPlans .datePickerField input[type=date]{width:100%!important;min-width:0!important;min-height:48px!important;padding:10px 12px!important;box-sizing:border-box!important;font-size:15px!important}
+#tabPlans .dateCalendarButton{width:auto!important;min-width:0!important;min-height:48px!important;padding:9px 13px!important;white-space:nowrap!important;font-size:12px!important;line-height:1.3!important}
+#tabPlans .settings > .fields > #save,#tabPlans .settings > .fields > #addPlan{grid-column:auto!important;display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important;min-height:51px!important;margin:0!important;padding:10px 8px!important;line-height:1.35!important;font-size:15px!important;border-radius:13px!important}
+#tabPlans .settings > .fields > #save{grid-column:1!important}
+#tabPlans .settings > .fields > #addPlan{grid-column:2!important}
+#tabPlans .settings > .small{line-height:1.6}
+/* 日付時刻は装飾を抑え、デジタル表示を連想させる等幅数字に */
+.top .todayDisplay{display:block;margin:1px 0 12px!important;font-family:'Roboto Mono','SFMono-Regular','Consolas','Liberation Mono',monospace!important;font-size:clamp(13px,3.4vw,16px)!important;line-height:1.5!important;font-weight:700!important;letter-spacing:.055em!important;font-variant-numeric:tabular-nums!important;color:#75658e!important;white-space:nowrap!important}
+.top h1{margin-bottom:7px!important}
+@media(max-width:390px){#tabPlans .datePickerField{grid-template-columns:minmax(0,1fr)!important}#tabPlans .dateCalendarButton{width:100%!important}#tabPlans .settings > .fields{gap:10px!important}#tabPlans .settings > .fields > #save,#tabPlans .settings > .fields > #addPlan{font-size:13px!important}}
+</style></head><body><main class="app"><header class="top"><div><div class="brand">TONARI-CHAN · DEADLINE COMPANION</div><h1>となりちゃんの締切日和</h1><div aria-label="現在の日付と時刻" class="todayDisplay" id="todayDisplay">----/--/--  --:--</div></div></header><nav aria-label="画面の切り替え" class="appTabs" role="tablist"><button aria-controls="tabHome" aria-selected="true" class="appTab active" data-tab="tabHome" id="tabBtnHome" role="tab" type="button">🏠 ホーム</button><button aria-controls="tabPlans" aria-selected="false" class="appTab" data-tab="tabPlans" id="tabBtnPlans" role="tab" type="button">📅 予定・しおり</button><button aria-controls="tabDiary" aria-selected="false" class="appTab" data-tab="tabDiary" id="tabBtnDiary" role="tab" type="button">📖 となりの日記</button><button aria-controls="tabMore" aria-selected="false" class="appTab" data-tab="tabMore" id="tabBtnMore" role="tab" type="button">❔ ヒント・セーブ</button></nav><div aria-labelledby="tabBtnHome" class="tabPage" id="tabHome" role="tabpanel"><section class="panel scene"><div class="character"><div aria-label="選択中の予定と締切" class="cornerDeadline"><div class="eyebrow" id="deadlineName">次の締切</div><div class="count" id="countdown">日付を設定してね</div><div class="sub" id="dateLabel">あなたの予定をお隣から見守ります</div></div><button aria-controls="planQuick" aria-expanded="false" class="cornerPeekToggle" id="cornerPeekToggle" type="button">☑ 準備・メモ</button><img alt="となりちゃんの立ち絵" id="sprite"/><button aria-label="となりちゃんに話しかける" id="tapCharacter"></button><div aria-label="お茶会の操作" class="faceTeaChoices" hidden="" id="faceTeaChoices">
 <button class="faceTeaBtn faceTeaLeft" id="faceTeaNext" type="button">つづきを聞く</button>
 <button class="faceTeaBtn faceTeaRight" id="faceTeaClose" type="button">お茶会を閉じる</button>
 </div><div aria-label="予定の区切りを報告する" class="faceReportChoices" hidden="" id="finishChoices">
@@ -217,7 +243,7 @@
 <button class="btn primary" id="chatYes" type="button">はい</button>
 <button class="btn" id="chatNo" type="button">いいえ</button>
 </div>
-</div></div><div class="right"><details class="planQuick" id="planQuick"><summary id="planQuickSummary">☑ 準備・メモを見る</summary><aside aria-label="今の予定の準備リストとメモ" class="homePlanPeek" hidden="" id="homePlanPeek"><div class="peekHeading">🌷 いまの予定</div><div class="peekPlanName" id="peekPlanName"></div><div class="peekSectionTitle" id="peekTaskTitle">☑ 準備リスト</div><div class="peekTasks" id="peekTasks"></div><div class="peekMemoSection" hidden="" id="peekMemoSection"><div class="peekSectionTitle">📝 ひとことメモ</div><div class="peekMemo" id="peekMemo"></div></div><button class="peekEdit" id="peekEdit" type="button">予定を編集 ↗</button></aside></details><div class="actions"><button class="btn primary" id="deadlineTalk">📅 締切について</button><button class="btn" id="randomTalk">💬 雑談する</button><button aria-expanded="false" class="btn" id="questionToggle">❔ となりに質問</button><button aria-expanded="false" class="btn" id="touchToggle">♡ となりとふれあう</button></div><button aria-expanded="false" class="btn primary homeReportBtn" id="reportToggle">🌷 おつかれさまを報告</button><div class="questionArea" hidden="" id="questionArea"><label for="questionSelect">となりちゃんに聞きたいこと</label><select id="questionSelect"></select><button class="btn primary" id="askQuestion">聞いてみる</button><div class="small" id="questionNote">同じ質問でも、違う答えが返ることがあります。</div></div><div class="touchArea" hidden="" id="touchArea"><div class="touchTop"><b>♡ となりとふれあう</b><span class="touchStats" id="touchStats"></span><button aria-label="ふれあいコマンドを閉じる" class="touchClose" id="touchClose" title="閉じる" type="button">×</button></div><div class="touchCats" id="touchCats"></div><div class="touchGrid" id="touchGrid"></div><div aria-live="polite" class="touchResponse" id="touchResponse">「私は攻略対象ではありませんよ？ ……でも、お話しするのは好きです！」</div><div class="touchProgress" id="touchProgress"></div><div class="unlockArea" hidden="" id="unlockArea"><h3 id="unlockTitle"></h3><p id="unlockLine"></p><button class="btn primary" id="unlockNext">つづきを聞く</button></div></div><div class="toast" id="status"></div><div class="finishArea" id="finishArea"><div class="teaArea" hidden="" id="teaArea"><h3 id="teaTitle">おつかれさまのお茶会</h3><div class="teaEmoji" id="teaEmoji">☕</div><div aria-live="polite" class="teaText" hidden="" id="teaText"></div><div class="teaActions"><button class="btn primary" id="teaNext">つづきを聞く</button><button class="btn" id="teaClose">お茶会を閉じる</button></div></div></div></div></section></div><div aria-labelledby="tabBtnPlans" class="tabPage" hidden="" id="tabPlans" role="tabpanel"><section class="panel settings"><h2>✎ 締切を設定する</h2><div class="fields"><label class="field">予定の名前<input id="taskName" maxlength="50" placeholder="例：新刊の入稿"/></label><label class="field">締切日<input id="dueDate" type="date"/></label><button class="btn primary" id="save">保存する</button><button class="btn" id="addPlan" type="button">＋ 別の予定を追加</button></div><p class="small">選択中の予定を編集できます。複数の予定を保存し、ホームに表示する予定を切り替えられます。</p>
+</div></div><div class="right"><details class="planQuick" id="planQuick"><summary id="planQuickSummary">☑ 準備・メモを見る</summary><aside aria-label="今の予定の準備リストとメモ" class="homePlanPeek" hidden="" id="homePlanPeek"><div class="peekHeading">🌷 いまの予定</div><div class="peekPlanName" id="peekPlanName"></div><div class="peekSectionTitle" id="peekTaskTitle">☑ 準備リスト</div><div class="peekTasks" id="peekTasks"></div><div class="peekMemoSection" hidden="" id="peekMemoSection"><div class="peekSectionTitle">📝 ひとことメモ</div><div class="peekMemo" id="peekMemo"></div></div><button class="peekEdit" id="peekEdit" type="button">予定を編集 ↗</button></aside></details><div class="actions"><button class="btn primary" id="deadlineTalk">📅 締切について</button><button class="btn" id="randomTalk">💬 雑談する</button><button aria-expanded="false" class="btn" id="questionToggle">❔ となりに質問</button><button aria-expanded="false" class="btn" id="touchToggle">♡ となりとふれあう</button></div><button aria-expanded="false" class="btn primary homeReportBtn" id="reportToggle">🌷 おつかれさまを報告</button><div class="questionArea" hidden="" id="questionArea"><label for="questionSelect">となりちゃんに聞きたいこと</label><select id="questionSelect"></select><button class="btn primary" id="askQuestion">聞いてみる</button><div class="small" id="questionNote">同じ質問でも、違う答えが返ることがあります。</div></div><div class="touchArea" hidden="" id="touchArea"><div class="touchTop"><b>♡ となりとふれあう</b><span class="touchStats" id="touchStats"></span><button aria-label="ふれあいコマンドを閉じる" class="touchClose" id="touchClose" title="閉じる" type="button">×</button></div><div class="touchCats" id="touchCats"></div><div class="touchGrid" id="touchGrid"></div><div aria-live="polite" class="touchResponse" id="touchResponse">「私は攻略対象ではありませんよ？ ……でも、お話しするのは好きです！」</div><div class="touchProgress" id="touchProgress"></div><div class="unlockArea" hidden="" id="unlockArea"><h3 id="unlockTitle"></h3><p id="unlockLine"></p><button class="btn primary" id="unlockNext">つづきを聞く</button></div></div><div class="toast" id="status"></div><div class="finishArea" id="finishArea"><div class="teaArea" hidden="" id="teaArea"><h3 id="teaTitle">おつかれさまのお茶会</h3><div class="teaEmoji" id="teaEmoji">☕</div><div aria-live="polite" class="teaText" hidden="" id="teaText"></div><div class="teaActions"><button class="btn primary" id="teaNext">つづきを聞く</button><button class="btn" id="teaClose">お茶会を閉じる</button></div></div></div></div></section></div><div aria-labelledby="tabBtnPlans" class="tabPage" hidden="" id="tabPlans" role="tabpanel"><section class="panel settings"><h2>✎ 締切を設定する</h2><div class="fields"><label class="field">予定の名前<input id="taskName" maxlength="50" placeholder="例：新刊の入稿"/></label><div class="field dateField"><label class="fieldLabel" for="dueDate">締切日</label><div class="datePickerField"><input aria-label="締切日" id="dueDate" type="date"/><button aria-label="カレンダーから締切日を選ぶ" class="dateCalendarButton" id="openDueCalendar" type="button">📅 カレンダーから選ぶ</button></div></div><button class="btn primary" id="save">保存する</button><button class="btn" id="addPlan" type="button">＋ 別の予定を追加</button></div><p class="small">選択中の予定を編集できます。複数の予定を保存し、ホームに表示する予定を切り替えられます。</p>
 <div aria-live="polite" class="planExtra" id="planList"></div>
 <div class="planExtra" id="planDetails">
 <h3>☑ ちいさな準備リスト</h3><p class="small" id="planEditGuide">まず予定名と締切日を保存すると、準備リストとメモを入力できます。</p><div id="miniTasks"></div>
@@ -561,16 +587,82 @@ const Q=[
  ['人間の「察してほしい」って、難しいと思いませんか？','そうですよね！ 言葉にしないで伝えるなんて……あわわ、考えることが増えてしまいます！','えっ、そうなんですか？ では、どうやってわかるんでしょう……あわわ、私にはまだ難しそうです！','hints'],
  ['「何でもいいよ」って、本当に何でもいいと思いますか？','ですよね！ ……でも、何でもいいと言われたのに断られることもあるんですって。あわわ！','むう、やっぱりそうですよね。だったら最初から希望を教えてほしいです！','anything'],
  ['私が攻略対象ではないって、信じてくださいますか？','ふふん、そうでしょう！ 私はただのお隣さんです。……なぜそんなににこにこしているんです？','むう。何度も申し上げていますのに！ ……まあ、お茶くらいならご一緒しますけど。','route',2],
+
+ // 追加の二択質問30件（問い・はい・いいえ・識別ID）
+ ["アップルパイは、朝ごはんに含まれると思いますか？", "よかった。では明日の朝食は、もう決まりですね。", "……では、朝ごはんのあとに食べることにします。", "pieBreakfast"],
+ ["紅茶に浮かぶ茶葉を、つい眺めてしまうことはありますか？", "小さな船団のようですよね。どこへ向かうのでしょう。", "私は時々、あれが会議をしているように見えるんです。", "teaLeaves"],
+ ["おやつは、誰かと半分こしたほうがおいしいと思いますか？", "そうですね。では、大きいほうをあなたに……あ、少しだけ迷いました。", "ふふ。一人占めする幸せも、ちゃんとありますからね。", "shareSnack"],
+ ["焼きたてのパンの香りには、人を引き止める力があると思いませんか？", "あれは魔法の一種ではないかと疑っています。", "おや。私は三度ほど、予定を変更させられましたよ。", "breadSmell"],
+ ["もし雲が綿菓子だったら、一口食べてみたいですか？", "私もです。雨の日は、少し湿っていそうですけれど。", "賢明ですね。空に歯形がついたら、たいへんです。", "cloudCandy"],
+ ["おいしいお菓子は、最後の一口を惜しんでしまいますか？", "わかります。私は時々、最後の一口をさらに二つに分けます。", "潔いですね。私は見習おうとして、毎回失敗しています。", "lastBite"],
+ ["昨日の自分と今日の自分は、同じ人だと思いますか？", "では、昨日のあなたが頑張ったことも、今日のあなたのものですね。", "なるほど。なら、今日は新しいあなたとお茶を飲めるわけですね。", "sameSelf"],
+ ["何もしない時間にも、意味はあると思いますか？", "ええ。私は、何もしない時間にしか育たないものがあると思います。", "そうかもしれません。でも私は、意味のない時間も好きですよ。", "idleTime"],
+ ["思い出には、少しずつ色がついていくと思いますか？", "昔のことほど、夕焼けの色に似てくる気がするんです。", "では、あなたの思い出は、きっと保存状態がいいのでしょうね。", "memoryColor"],
+ ["名前をつけると、ものは少し特別になると思いますか？", "私もそう思います。だから、名前を呼ぶときは少し丁寧になります。", "なるほど。名前のないものにも、ちゃんと居場所はありますものね。", "naming"],
+ ["未来の自分に、手紙を書いてみたいですか？", "いいですね。私は封筒に、小さなお菓子も入れたいです。", "ふふ。未来のあなたには、直接会って話せばいいのかもしれません。", "futureLetter"],
+ ["世界には、知らないままのほうが美しいこともあると思いますか？", "秘密というのは、閉じた箱の形まで美しいことがありますね。", "では、いつか全部わかったら、私にも教えてくださいね。", "beautifulUnknown"],
+ ["私が一日中おしゃべりしていても、嫌いになりませんか？", "……よかった。では、少しだけ続きをお話ししても？", "あら。では、今日は静かな隣人を目指します。……五分ほど。", "talkAllDay"],
+ ["もし私が迷子になったら、探しに来てくれますか？", "ありがとうございます。では私は、見つけやすい場所でお茶を飲んで待ちます。", "ふふ。では、迷子にならないよう、あなたの隣を歩きますね。", "lostNeighbor"],
+ ["私のことを、少し変わった隣人だと思いますか？", "やっぱり。自覚はあるんです。少しだけ、ですけれど。", "まあ。それはそれで、私には少し意外なお返事です。", "oddNeighbor"],
+ ["明日も、私に会いに来てくれますか？", "では、明日のお茶を用意しておきます。約束ですよ。", "そうですか。では、次に会える日のお茶を楽しみにしています。", "tomorrowVisit"],
+ ["もし私が小鳥になったら、見分けられると思いますか？", "ふふ。たぶん、いちばんお菓子を気にしている鳥が私です。", "では、あなたの窓辺で「となりです」と鳴くことにしましょう。", "birdNeighbor"],
+ ["私があなたの秘密を一つ預かると言ったら、信用してくれますか？", "大切にしまっておきます。鍵のかかる、心の引き出しに。", "もちろん、無理には聞きません。秘密は持ち主のものですから。", "keepSecret"],
+ ["人間は、どうしてお祝いの日にケーキを食べるのでしょう。いい習慣だと思いますか？", "私も大賛成です。できれば、もう少しお祝いの日を増やしたいですね。", "なるほど。では、ケーキは何でもない日に食べましょう。", "celebrationCake"],
+ ["「お疲れさま」という言葉は、ちょっとした魔法だと思いませんか？", "たった六文字で、人の肩が少し軽くなるんです。不思議ですね。", "そうですね。言葉だけでなく、温かいお茶も添えたいところです。", "otsukaresama"],
+ ["人間は、雨の日に少し感傷的になるものですか？", "では、雨の日には静かな音楽を用意しておきましょう。", "そうなのですね。私は雨粒の数を数えて、途中で眠くなります。", "rainSentiment"],
+ ["お店の「期間限定」という言葉には、不思議な力があると思いませんか？", "私もです。あれを見ると、急に今日が大切な日に思えてきます。", "立派です。私は「限定」の二文字に、まだ勝てたことがありません。", "limitedOffer"],
+ ["ぬいぐるみに話しかけるのは、変わったことだと思いますか？", "そうでしょうか。では、私たちだけの秘密にしておきましょう。", "よかった。昨日、クッションと少し議論をしたところなんです。", "talkPlush"],
+ ["人間の「また今度」は、本当に次がある言葉だと思いますか？", "素敵ですね。私は、その「今度」を信じて待つのが好きです。", "少し寂しい言葉でもあるのですね。では私は、なるべく日付を決めます。", "nextTime"],
+ ["もし月に小さな喫茶店があったら、行ってみたいですか？", "窓際の席を予約しましょう。地球がよく見えるところがいいですね。", "では、地上の喫茶店で月を眺めましょう。それも素敵です。", "moonCafe"],
+ ["夜中に家具が少しだけ移動していても、気にしませんか？", "おおらかですね。では、椅子たちの散歩を見守りましょう。", "そうですよね。私も、本棚には勝手に出歩かないでほしいです。", "movingFurniture"],
+ ["もし一日だけ時間を止められたら、使ってみたいですか？", "私はまず、お茶が冷めないか確かめたいです。", "なるほど。流れている時間の中にいるほうが、落ち着くのかもしれません。", "stopTime"],
+ ["鏡の向こうにも、別の部屋が続いていると思ったことはありますか？", "私もです。向こう側の私は、もうお茶を淹れ終えたでしょうか。", "そうですか。では、鏡は今日もお仕事をきちんとしているのですね。", "mirrorRoom"],
+ ["星が一つだけあなたの名前を知っていたら、嬉しいですか？", "では、今夜は空に向かって、小さく挨拶をしてみましょう。", "知られないまま輝いているのも、悪くないものですね。", "starName"],
+ ["もし夢を瓶に詰めて保存できたら、取っておきたいですか？", "瓶のラベルには、日付と夢の題名を書きましょう。", "夢は消えてしまうから美しい、ということもあるのでしょうね。", "dreamBottle"],
  ];
 const requests=['今日はアップルパイのことを考えていたんです。……あっ、あなたは何を考えていました？','私、今日はちょっと読書に夢中で。……少しだけ待っていただいてもいいですか？','むう。今日は私のほっぺをつつかないんですか？ ……催促ではありませんよ！','人間のお祭りって好きなんです。役に立つかどうかを超えて、みんなで楽しむでしょう？','私、悲しい結末のお話も好きなんです。でも今日は、幸せなお話が読みたい気分ですねえ。','私はお隣にいるのが好きです。……誰かに決められたわけじゃありませんよ。'];
 let answers={};try{answers=JSON.parse(localStorage.getItem(CHAT_KEY)||'{}')||{}}catch(e){}
 const QUESTION_FACES={"rain":["wonder_new","smile_new","calm"],"sad":["wonder_new","calm","calm"],"pie":["food","food","food"],"free":["wonder_new","smile_new","smile_new"],"quiet":["wonder_new","calm","smile_new"],"dream":["wonder_new","wonder_new","calm"],"tea":["smile_new","smile_new","calm"],"book":["wonder_new","smile_new","calm"],"hand":["shy","shy","calm"],"cuddle":["shy","shy","calm"],"neighbor":["shy","shy","smile_new"],"dailyPie":["wonder_new","spiral","jito"],"childish":["wonder_new","jito","shy"],"hints":["wonder_new","spiral","spiral"],"anything":["wonder_new","spiral","jito"],"route":["smug","smug","jito"]};
+// 追加質問も、問いかけ／はい／いいえの各場面で立ち絵を切り替える。
+Object.assign(QUESTION_FACES,{
+ "pieBreakfast":["food", "happy", "jito"],
+ "teaLeaves":["wonder_new", "calm", "wonder_new"],
+ "shareSnack":["wonder_new", "shy", "smile_new"],
+ "breadSmell":["food", "happy", "smug"],
+ "cloudCandy":["wonder_new", "food", "smile_new"],
+ "lastBite":["food", "shy", "spiral"],
+ "sameSelf":["wonder_new", "calm", "smile_new"],
+ "idleTime":["calm", "calm", "smile_new"],
+ "memoryColor":["wonder_new", "calm", "smile_new"],
+ "naming":["wonder_new", "shy", "calm"],
+ "futureLetter":["wonder_new", "happy", "smile_new"],
+ "beautifulUnknown":["wonder_new", "calm", "smile_new"],
+ "talkAllDay":["shy", "happy", "smug"],
+ "lostNeighbor":["wonder_new", "smile_new", "shy"],
+ "oddNeighbor":["smug", "smug", "surprise"],
+ "tomorrowVisit":["shy", "happy", "calm"],
+ "birdNeighbor":["wonder_new", "food", "smile_new"],
+ "keepSecret":["calm", "shy", "calm"],
+ "celebrationCake":["food", "happy", "smug"],
+ "otsukaresama":["calm", "smile_new", "calm"],
+ "rainSentiment":["wonder_new", "calm", "shy"],
+ "limitedOffer":["wonder_new", "happy", "spiral"],
+ "talkPlush":["wonder_new", "shy", "smile_new"],
+ "nextTime":["wonder_new", "smile_new", "calm"],
+ "moonCafe":["wonder_new", "happy", "calm"],
+ "movingFurniture":["surprise", "smile_new", "jito"],
+ "stopTime":["wonder_new", "smug", "calm"],
+ "mirrorRoom":["wonder_new", "wonder_new", "smile_new"],
+ "starName":["wonder_new", "shy", "calm"],
+ "dreamBottle":["wonder_new", "happy", "calm"]
+});
 let pending=null;function closeChoice(){$('chatChoiceBox').hidden=true;pending=null;}
 function ask(){const stats=$('touchStats')?.textContent||'';const done=Number(stats.match(/達成\s*(\d+)/)?.[1]||0),touch=Number(stats.match(/ふれあい\s*(\d+)/)?.[1]||0);const stage=done>=10&&touch>=60?4:done>=5&&touch>=30?3:done>=3&&touch>=15?2:done>=1&&touch>=5?1:0;const eligible=Q.filter(q=>!q[4]||q[4]<=stage);pending=eligible[Math.floor(Math.random()*eligible.length)];$('chatChoiceBox').hidden=false;tonariDisplay(pending[0],(QUESTION_FACES[pending[3]]||[])[0]||'wonder_new',true,'question');}
 function reply(yes){if(!pending)return;const q=pending;answers[q[3]]=yes;try{localStorage.setItem(CHAT_KEY,JSON.stringify(answers))}catch(e){}const line=q[yes?1:2];const face=(QUESTION_FACES[q[3]]||[])[yes?1:2]||'normal';closeChoice();tonariDisplay(line,face,true,'reply');}
 $('chatYes').onclick=()=>reply(true);$('chatNo').onclick=()=>reply(false);
 const oldTalk=$('randomTalk').onclick;
 function newTalk(){closeChoice();const r=Math.random();if(r<.15){ask();return;}if(r<.25){say(requests[Math.floor(Math.random()*requests.length)]);return;}if(r<.29&&answers.rain===false){say('今日は雨ですねえ。そういえば、あなたは雨があまり好きではないんでしたね。早く晴れるといいですね。');return;}oldTalk?.();}
+window.tonariAskChoice=ask;
 $('randomTalk').onclick=newTalk;$('tapCharacter').onclick=newTalk;
 // バックアップ機能にも追加キーを含める（元の書き出し・読込処理のキー一覧を拡張済み）。
 select(active);
@@ -667,4 +759,48 @@ draw();
   window.addEventListener('resize',update,{passive:true});
   if(typeof ResizeObserver!=='undefined')new ResizeObserver(update).observe(panel);
   update();
+})();</script><script id="choiceAndFreshTalkFix2026">
+(function(){
+  const talk=document.getElementById('randomTalk');
+  const character=document.getElementById('tapCharacter');
+  // 二択は10%で抽選。ただし二択の後は通常雑談を最低2回挟む。
+  // このカウンターはページを開いている間の連続表示を防ぐためのもの。
+  let ordinaryChatsSinceChoice=2;
+  function chat(){
+    const choice=document.getElementById('chatChoiceBox');
+    if(choice)choice.hidden=true;
+    const canAsk=ordinaryChatsSinceChoice>=2 && typeof window.tonariAskChoice==='function';
+    if(canAsk && Math.random()<0.10){
+      ordinaryChatsSinceChoice=0;
+      window.tonariAskChoice();
+    }else{
+      ordinaryChatsSinceChoice=Math.min(ordinaryChatsSinceChoice+1,2);
+      if(typeof window.tonariChatDraw==='function')window.tonariChatDraw();
+    }
+  }
+  if(talk)talk.onclick=chat;
+  if(character)character.onclick=chat;
+})();
+</script>
+<script id="calendarDateEnhancementScript">(function(){
+  const due=document.getElementById('dueDate');
+  const calendar=document.getElementById('openDueCalendar');
+  if(calendar&&due)calendar.addEventListener('click',function(){
+    try{if(typeof due.showPicker==='function'){due.showPicker();return;}}catch(e){}
+    due.focus();due.click();
+  });
+})();</script><script id="clockOverride2026">(function(){
+  'use strict';
+  const el=document.getElementById('todayDisplay');
+  if(!el)return;
+  function render(){
+    const d=new Date(),pad=n=>String(n).padStart(2,'0');
+    const h=d.getHours(),ap=h<12?'am':'pm';
+    const hh=pad(h%12||12);
+    el.textContent=d.getFullYear()+'/'+pad(d.getMonth()+1)+'/'+pad(d.getDate())+'  '+ap+hh+':'+pad(d.getMinutes());
+  }
+  render();
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)render()});
+  window.addEventListener('focus',render);
+  setInterval(render,10000);
 })();</script></body></html>
