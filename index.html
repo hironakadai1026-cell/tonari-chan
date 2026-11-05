@@ -344,7 +344,7 @@
 .tonariMiniButtons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
 #tonariHomeTimerMini .btn{min-width:0;font-size:12px!important;padding:10px 3px!important;white-space:nowrap;border-radius:12px}
 @media(max-width:370px){#tonariHomeTimerMini{margin:9px 10px;padding:10px}#tonariMiniRemaining{font-size:27px}.tonariMiniButtons{gap:5px}#tonariHomeTimerMini .btn{font-size:11px!important}}
-</style></head><body><main class="app"><header class="top"><div><div class="brand">TONARI-CHAN · DEADLINE COMPANION</div><h1>となりちゃんの締切日和</h1><div aria-label="現在の日付と時刻" class="todayDisplay" id="todayDisplay">----/--/--  --:--</div></div></header><nav aria-label="画面の切り替え" class="appTabs" role="tablist"><button aria-controls="tabHome" aria-selected="true" class="appTab active" data-tab="tabHome" id="tabBtnHome" role="tab" type="button">🏠 ホーム</button><button aria-controls="tabPlans" aria-selected="false" class="appTab" data-tab="tabPlans" id="tabBtnPlans" role="tab" type="button">📅 予定・しおり</button><button aria-controls="tabDiary" aria-selected="false" class="appTab" data-tab="tabDiary" id="tabBtnDiary" role="tab" type="button">📖 となりの日記</button><button aria-controls="tabMore" aria-selected="false" class="appTab" data-tab="tabMore" id="tabBtnMore" role="tab" type="button">❔ ヒント・セーブ</button></nav><div aria-labelledby="tabBtnHome" class="tabPage" id="tabHome" role="tabpanel"><section class="panel scene"><div class="character"><div aria-label="選択中の予定と締切" class="cornerDeadline"><div class="eyebrow" id="deadlineName">次の締切</div><div class="count" id="countdown">日付を設定してね</div><div class="sub" id="dateLabel">あなたの予定をお隣から見守ります</div></div><button aria-controls="planQuick" aria-expanded="false" class="cornerPeekToggle" id="cornerPeekToggle" type="button">☑ 準備・メモ</button><button id="tonariTimerOpen" class="tonariTimerIcon" type="button" aria-label="集中タイマーを開く" title="集中タイマー">集中タイマー</button><img alt="となりちゃんの立ち絵" id="sprite"/><button aria-label="となりちゃんに話しかける" id="tapCharacter"></button><div aria-label="お茶会の操作" class="faceTeaChoices" hidden="" id="faceTeaChoices">
+</style></head><body><main class="app"><header class="top"><div><div class="brand">TONARI-CHAN · DEADLINE COMPANION</div><h1>となりちゃんの締切日和</h1><div aria-label="現在の日付と時刻" class="todayDisplay" id="todayDisplay">----/--/--  --:--</div></div></header><nav aria-label="画面の切り替え" class="appTabs" role="tablist"><button aria-controls="tabHome" aria-selected="true" class="appTab active" data-tab="tabHome" id="tabBtnHome" role="tab" type="button">🏠 ホーム</button><button aria-controls="tabPlans" aria-selected="false" class="appTab" data-tab="tabPlans" id="tabBtnPlans" role="tab" type="button">📅 予定・しおり</button><button aria-controls="tabDiary" aria-selected="false" class="appTab" data-tab="tabDiary" id="tabBtnDiary" role="tab" type="button">📖 となりの日記</button><button aria-controls="tabMore" aria-selected="false" class="appTab" data-tab="tabMore" id="tabBtnMore" role="tab" type="button">❔ ヒント・設定</button></nav><div aria-labelledby="tabBtnHome" class="tabPage" id="tabHome" role="tabpanel"><section class="panel scene"><div class="character"><div aria-label="選択中の予定と締切" class="cornerDeadline"><div class="eyebrow" id="deadlineName">次の締切</div><div class="count" id="countdown">日付を設定してね</div><div class="sub" id="dateLabel">あなたの予定をお隣から見守ります</div></div><button aria-controls="planQuick" aria-expanded="false" class="cornerPeekToggle" id="cornerPeekToggle" type="button">☑ 準備・メモ</button><button id="tonariTimerOpen" class="tonariTimerIcon" type="button" aria-label="集中タイマーを開く" title="集中タイマー">集中タイマー</button><img alt="となりちゃんの立ち絵" id="sprite"/><button aria-label="となりちゃんに話しかける" id="tapCharacter"></button><div aria-label="お茶会の操作" class="faceTeaChoices" hidden="" id="faceTeaChoices">
 <button class="faceTeaBtn faceTeaLeft" id="faceTeaNext" type="button">つづきを聞く</button>
 <button class="faceTeaBtn faceTeaRight" id="faceTeaClose" type="button">お茶会を閉じる</button>
 </div><div aria-label="予定の区切りを報告する" class="faceReportChoices" hidden="" id="finishChoices">
@@ -366,14 +366,16 @@
 <h3>☑ ちいさな準備リスト</h3><p class="small" id="planEditGuide">まず予定名と締切日を保存すると、準備リストとメモを入力できます。</p><div id="miniTasks"></div>
 <div class="fields miniTaskEntry"><input id="newMiniTask" maxlength="80" placeholder="例：持ち物を確認する"/><button class="btn" id="addMiniTask" type="button">＋ 項目を追加</button></div>
 <h3>📝 ひとことメモ</h3><textarea class="planMemo" id="planMemo" maxlength="3000" placeholder="持ち物・場所・参考URLなどを自由にメモできます"></textarea><p class="small" id="planDetailStatus">入力すると自動保存されます。</p>
-</div><button aria-expanded="false" class="btn" id="journalToggle">📖 日々のしおりを見る</button><div class="journalArea" hidden="" id="journalArea"><div class="journalList" id="journalList"></div><p class="small">このブラウザ内に保存されます。記録を消す場合は個別に削除できます。</p></div></section></div><div aria-labelledby="tabBtnDiary" class="tabPage" hidden="" id="tabDiary" role="tabpanel"><section class="diaryPanel"><div class="diaryHead"><span class="diaryEyebrow">TONARI'S LITTLE DIARY</span><h2>📖 となりの日記</h2><p>となりちゃんが、ひっそり書いている日記。新しい一篇が毎日増えます。</p></div><article class="diaryPaper"><div class="diaryDate" id="diaryDate"></div><h3 id="diaryTitle"></h3><div class="diaryBody" id="diaryBody"></div></article><div class="diaryNav"><button id="diaryPrev" type="button">‹ 前の日記</button><span id="diaryCounter"></span><button id="diaryNext" type="button">次の日記 ›</button></div><p class="diaryFoot" id="diaryFoot"></p><details class="diaryArchive"><summary>📚 これまでの日記を選ぶ</summary><div class="diaryArchiveList" id="diaryArchiveList"></div></details></section></div><div aria-labelledby="tabBtnMore" class="tabPage" hidden="" id="tabMore" role="tabpanel"><div class="guideHeader"><div class="guideEyebrow">GUIDE &amp; BACKUP</div><h2>❔ ヒント・セーブ</h2><p>遊び方を確認したり、大切な記録を保存できます。</p></div>
-<section class="guideCard"><div class="guideCardHead"><div><h3>🌷 遊び方のヒント</h3><p>気になる項目をタップすると説明が開きます。</p></div></div>
-<details class="guideItem"><summary>🏠 ホーム・となりちゃんとの会話</summary><div class="guideBody">ホームには、選択中の予定の残り日数が表示されます。「締切について」で応援の言葉を聞けます。「雑談する」では、時間帯や季節に応じた話題も登場します。ときどき二択の質問が出たら、立ち絵の左右に現れる丸い「はい／いいえ」で答えてください。「となりに質問」では、となりちゃん自身について聞けます。</div></details>
-<details class="guideItem"><summary>📅 予定・準備リスト・メモ</summary><div class="guideBody">「予定・しおり」では予定を複数登録できます。予定を選んで、ホームに表示するものを切り替えられます。予定ごとに準備リストとひとことメモを保存できます。ホームの「準備・メモ」からも確認できます。準備リストはチェックを付けたり、項目を追加・削除したりできます。</div></details>
-<details class="guideItem"><summary>🌷 おつかれさまの報告・お茶会</summary><div class="guideBody">ホームの「おつかれさまを報告」を押すと、立ち絵の左右に「おわったよ！」「まだ続いてるよ」「予定が変わったよ」「中止になったよ」の丸ボタンが現れます。選ぶととなりちゃんが応えてくれます。お茶会では左右の丸ボタンから続きを聞いたり、閉じたりできます。最後に「しおりに記録する」を選ぶと、日々のしおりに残せます。「おわったよ！」の記録は、ふれあいコマンドの解放にも関係します。</div></details>
-<details class="guideItem"><summary>♡ となりとふれあう・親密度</summary><div class="guideBody">「となりとふれあう」で、となりちゃんとのやりとりを楽しめます。コマンド一覧を開いている間は通常の操作ボタンが隠れ、右上の小さな「×」で何もせず戻れます。コマンドは全28種類・5段階。予定達成の記録とふれあい回数に応じて増えます。解放の目安は第2段階が達成1回＋ふれあい5回、第3段階が3回＋15回、第4段階が5回＋30回、第5段階が10回＋60回です。解放に数えるふれあいは1日3回までですが、それ以上も遊べます。</div></details>
-<details class="guideItem"><summary>📖 となりの日記</summary><div class="guideBody">となりちゃんがひっそり書いている日記です。毎日1篇ずつ新しい日記が公開され、読んだ日記は後から読み返せます。本文は日記の用紙の中でスクロールできます。日記の公開順はランダムですが、一巡するまでは同じ内容が出ない仕組みです。</div></details>
-<details class="guideItem"><summary>🔖 日々のしおり・記録について</summary><div class="guideBody">お茶会の最後に保存した報告は「日々のしおり」から振り返れます。達成回数は「おわったよ！」として記録した予定が対象です。記録を削除すると達成回数も変わりますが、一度解放したふれあいコマンドは維持されます。</div></details>
+</div><button aria-expanded="false" class="btn" id="journalToggle">📖 日々のしおりを見る</button><div class="journalArea" hidden="" id="journalArea"><div class="journalList" id="journalList"></div><p class="small">このブラウザ内に保存されます。記録を消す場合は個別に削除できます。</p></div></section></div><div aria-labelledby="tabBtnDiary" class="tabPage" hidden="" id="tabDiary" role="tabpanel"><section class="diaryPanel"><div class="diaryHead"><span class="diaryEyebrow">TONARI'S LITTLE DIARY</span><h2>📖 となりの日記</h2><p>となりちゃんが、ひっそり書いている日記。新しい一篇が毎日増えます。</p></div><article class="diaryPaper"><div class="diaryDate" id="diaryDate"></div><h3 id="diaryTitle"></h3><div class="diaryBody" id="diaryBody"></div></article><div class="diaryNav"><button id="diaryPrev" type="button">‹ 前の日記</button><span id="diaryCounter"></span><button id="diaryNext" type="button">次の日記 ›</button></div><p class="diaryFoot" id="diaryFoot"></p><details class="diaryArchive"><summary>📚 これまでの日記を選ぶ</summary><div class="diaryArchiveList" id="diaryArchiveList"></div></details></section></div><div aria-labelledby="tabBtnMore" class="tabPage" hidden="" id="tabMore" role="tabpanel"><div class="guideHeader"><div class="guideEyebrow">GUIDE &amp; SETTINGS</div><h2>❔ ヒント・設定</h2><p>遊び方の確認、自動おしゃべりの設定、記録のバックアップができます。</p></div>
+<section class="guideCard" id="tonariAutoTalkSettings"><div class="guideCardHead"><div><h3>💬 自動でおしゃべり</h3><p>5分ごとに、となりちゃんが雑談します。</p></div></div><label class="tonariAutoTalkRow" for="tonariAutoTalkEnabled"><input type="checkbox" id="tonariAutoTalkEnabled" checked><span>自動でおしゃべりする <small>集中タイマー中や、画面を閉じている間はお休みします。</small></span></label></section>
+<section class="guideCard"><div class="guideCardHead"><div><h3>🌷 遊び方のヒント</h3><p>項目をタップすると説明が開きます。</p></div></div>
+<details class="guideItem"><summary>🏠 ホームとおしゃべり</summary><div class="guideBody">「雑談する」でおしゃべりできます。自動おしゃべりをONにすると5分ごとに話します。立ち絵をタップすると反応し、頭を左右になでると別の反応が楽しめます。「となりに質問」では質問を選べます。会話中に「はい／いいえ」が出たら、丸いボタンで答えてください。</div></details>
+<details class="guideItem"><summary>📅 締切・準備・メモ</summary><div class="guideBody">「予定・しおり」で締切を登録します。複数の予定を保存でき、ホームに表示する予定を切り替えられます。準備リストとメモは予定ごとに保存され、ホームの「準備・メモ」でも確認できます。「締切について」でとなりちゃんが声をかけます。</div></details>
+<details class="guideItem"><summary>☕ 集中タイマー</summary><div class="guideBody">ホームの「集中タイマー」で作業と休憩の時間を設定できます。繰り返し回数やBGMも変更できます。タイマー中は自動雑談をお休みします。</div></details>
+<details class="guideItem"><summary>🌷 おつかれさまの報告</summary><div class="guideBody">「おつかれさまを報告」で予定の結果を伝えられます。お茶会のあとに「しおりに記録する」を選ぶと、報告を保存できます。</div></details>
+<details class="guideItem"><summary>♡ となりとふれあう</summary><div class="guideBody">「となりとふれあう」では専用のやりとりを楽しめます。予定の達成記録とふれあい回数に応じて、新しいコマンドが増えます。閉じるときは右上の「×」を押してください。</div></details>
+<details class="guideItem"><summary>📖 日記と日々のしおり</summary><div class="guideBody">「となりの日記」は毎日1篇ずつ増え、過去の日記も読み返せます。「日々のしおり」では保存した報告を確認できます。</div></details>
+<details class="guideItem"><summary>💾 記録の保存と引き継ぎ</summary><div class="guideBody">記録はこのブラウザに保存されます。機種変更やデータ消去に備え、下の「セーブデータを書き出す」でバックアップしてください。読み込み時は現在の記録が上書きされます。</div></details>
 </section>
 <section class="guideCard backupPanel"><div class="guideCardHead"><div><h3>💾 もしものためのセーブ</h3><p>予定・準備リスト・メモ・日記・しおり・ふれあいなどの記録をバックアップできます。</p></div></div><div class="backupActions"><button class="btn primary" id="backupExport" type="button">💾 セーブデータを書き出す</button><button class="btn" id="backupImport" type="button">📂 セーブデータを読み込む</button></div><input accept=".json,application/json" hidden="" id="backupFile" type="file"/><p aria-live="polite" class="backupNotice" id="backupStatus" role="status">読み込み時は現在の記録が上書きされます。先に書き出しておくと安心です。</p></section></div><div class="foot">お隣から、今日もそっと応援しています ☕</div></main><script>
 const IMAGES={"peace_new": "tonari_peace_new.png","wonder_new": "tonari_wonder_new.png","smile_new": "tonari_smile_new.png","normal": "tonari_normal.png", "surprise": "tonari_surprise.png", "happy": "tonari_happy.png", "calm": "tonari_calm.png", "jito": "tonari_jito.png", "shy": "tonari_shy.png", "smug": "tonari_smug.png", "troubled_smile": "tonari_troubled_smile.png", "food": "tonari_food.png", "spiral": "tonari_spiral.png"};
@@ -542,6 +544,26 @@ const TONARI_MONTHLY_EVERYDAY_TALK = {
   "お掃除をしていたら、懐かしい本が出てきたんです。……ちょっとだけ読むつもりが、すっかり夢中になってしまって。お掃除は、まだ途中なんですよ。"
  ]
 };
+// お昼ごはんは「日付＋料理」を保存し、同じ日は同じ献立にする。
+const TONARI_LUNCH_SEASONAL = {"spring": ["今日のお昼は、菜の花のパスタにしたんです。少しほろ苦くて、春らしい味ですねえ。……ふふ、春って、こんな味がするんでしょうか。", "お昼にたけのこご飯を炊いたんです。炊きあがるまで、いい香りがしていて……ふふ、何度も炊飯器を覗きに行ってしまいました。", "春キャベツをたっぷり挟んだサンドイッチを作ったんです。……でも、ちょっと挟みすぎたみたいで。食べようとすると、キャベツがあちこちから飛び出してくるんですよ。むむ。", "今日は桜えびのかき揚げうどんを食べました。かき揚げをおつゆに浸すか、さくさくのまま食べるか……ふふ、なかなか難しい問題ですねえ。"], "summer": ["今日のお昼は冷やし中華です。きゅうりと卵とトマトを並べていたら、なんだかきれいにできてしまって。……ふふ、食べるのがちょっともったいないですねえ。", "お昼にそうめんを茹でたんです。つるつるしていて、いくらでも食べられそうですねえ。……と思って、ちょっと茹ですぎてしまいました。むむ。", "今日は夏野菜のカレーにしました。なすとトマトと、かぼちゃも入れたんです。……ふふ、野菜がたくさんで、なんだか賑やかなカレーになりました。", "お昼は冷たいお茶漬けにしたんです。氷をひとつ浮かべてみたら、なんだか涼しげで。……ふふ、こういう小さな工夫、好きなんですよ。"], "autumn": ["今日のお昼は、きのこのクリームパスタです。しめじと舞茸を入れたんですけど、いい香りですねえ。……ふふ、秋はおいしいものが多くて困ります。", "今日のお昼は、秋刀魚の塩焼きにしたんです。大根おろしをたっぷり添えたら、さっぱりしておいしくて。……ふふ、ご飯が進んでしまいました。", "今日は鮭の炊き込みご飯を作りました。炊きあがって蓋を開けたら、いい香りがふわっとして……ふふ、ちょっと嬉しくなってしまいました。", "お昼はさつまいものグラタンにしたんです。甘いお芋とチーズって、よく合うんですねえ。……ふふ、思っていたよりおいしくて、少し驚きました。"], "winter": ["今日のお昼は鍋焼きうどんです。ぐつぐつ煮えているのを眺めていたら、なんだか嬉しくなってしまって。……ふふ、冬のお昼はこういうのがいいですねえ。", "お昼はクリームシチューにしたんです。にんじんを星の形に切ってみたんですけど……ふふ、煮込んだら、ちょっと丸くなってしまいました。", "今日はおでんを食べました。大根がよく煮えていて、おいしかったです。……ふふ、熱いので、ふうふうしながら食べましたよ。", "お昼は白菜と豚肉の雑炊にしたんです。卵もひとつ落として、あつあつにして。……ふふ、食べ終わる頃には、すっかり身体が温まりました。"]};
+const TONARI_LUNCH_ALL_YEAR = ["今日のお昼はカレーライスです。昨日作ったものなんですけど、一晩たつと、なんだか味が変わる気がしますねえ。……ふふ、おかわりしようか迷っています。", "今日はチャーハンを作りました。冷蔵庫にあったものをいろいろ入れたので、何チャーハンなのかは、ちょっと説明が難しいんですけど。……ふふ、おいしくできました。", "お昼におにぎりを作ったんです。梅干しと鮭と、あと昆布も。……ふふ、どれから食べようか迷ってしまいました。", "今日のお昼はオムライスにしたんです。ケチャップで何か描こうと思ったんですけど、うまくいかなくて。……ふふ、結局、よくわからない模様になってしまいました。", "今日はサンドイッチの気分です。でも、温かいスープも捨てがたいですねえ。"];
+const TONARI_LUNCH_KEY = 'tonariLunchOfDayV1';
+function tonariLunchToday(now=new Date()){
+ const hour=now.getHours();
+ if(hour<11||hour>=14)return null;
+ const date=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+ const season=seasonKey();
+ const pool=[...TONARI_LUNCH_SEASONAL[season],...TONARI_LUNCH_ALL_YEAR];
+ try{
+  const saved=JSON.parse(localStorage.getItem(TONARI_LUNCH_KEY)||'null');
+  if(saved&&saved.date===date&&pool.includes(saved.text))return saved.text;
+ }catch(e){}
+ const text=pool[Math.floor(Math.random()*pool.length)];
+ try{localStorage.setItem(TONARI_LUNCH_KEY,JSON.stringify({date,text}));}catch(e){}
+ return text;
+}
+window.tonariLunchToday=tonariLunchToday;
+
 function drawFreshChat(extra=[]){
  const entries=[];
  const now=new Date();
@@ -559,6 +581,13 @@ function drawFreshChat(extra=[]){
  CULTURE_TALK.forEach((v,i)=>push('culture:'+i,v,'normal'));
  MYSTERY_TALK.forEach((v,i)=>push('mystery:'+i,v,'normal'));
  extra.forEach(v=>push(v.key,v.text,v.mood));
+ // 昼食は通常雑談の未読プールとは独立した固定確率で抽選する。
+ // 当日の献立は tonariLunchToday が保存・固定する。
+ const lunch=tonariLunchToday(now);
+ if(lunch && Math.random()<0.03){
+  tonariDisplay(lunch,'food',true);
+  return;
+ }
  // セリフの文章が同じ場合も重複を避ける。
  const unique=[...new Map(entries.map(v=>[v.text,v])).values()];
  // 一巡の未表示候補と、直近30回の表示履歴を両方参照する。
@@ -1141,14 +1170,14 @@ select(active);
 const TIME_LINES={"6":[["calm","おはようございます。朝の空気は、まだ少し眠たそうですね。ふふ、私もです。"],["wonder_new","朝の六時です。こんなに早くから起きている人間は、いったい何をしているんでしょう。……あっ、あなたがいましたね！"],["normal","朝日が昇るところを見ると、世界が新しくなったような気がします。"],["shy","……おはようございます。あなたが起きてくるかなと思って、少し待っていました。"]],"7":[["smile_new","おはようございます！ 朝ごはんは食べましたか？ 私はこれからです。"],["jito","人間は朝からずいぶん忙しそうです。……むう。もう少しゆっくりしてもいいと思うんですけど。"],["calm","窓を開けたら、鳥の声が聞こえました。"],["smile_new","今日は一緒に朝ごはんを食べませんか？ あなたの分のお茶も用意してありますよ。"]],"8":[["normal","そろそろ一日が動き出す時間ですね。さて、今日は何が起こるでしょう。"],["food","朝のパン屋さんって、いい匂いがしますよねえ。アップルパイもあるでしょうか。"],["smug","私は朝の準備が得意なんですよ。……昨日の寝坊は例外です！"],["shy","あなたの「おはよう」を聞くと、私も一日を始めようって気になります。"]],"9":[["smile_new","九時ですね。さあ、今日もぼちぼちやっていきましょう！"],["wonder_new","人間の「仕事モード」って、どこで切り替わるんでしょう。"],["calm","机の上を整えると、頭の中まですっきりしますね。私の机は……また今度。"],["happy","今日もお隣から応援しています。疲れたら声をかけてくださいね。"]],"10":[["food","十時のおやつの時間です！ ……えっ、まだ早いですか？"],["spiral","紅茶にするかココアにするか……あわわ、決まりません！"],["calm","午前中の光って、本のページをきれいに照らしてくれるんです。"],["smile_new","お茶を淹れましたよ。あなたが好きそうなものを選んでみました。"]],"11":[["food","そろそろお昼ですねえ。もうお腹が空いてきました。"],["normal","午前中も、もう少しでおしまいです。ちゃんと休憩してくださいね。"],["wonder_new","お昼ごはんって、毎日食べるのに毎日考えるんですね。"],["jito","……あなた、またお昼を後回しにしていませんか？ むう。一緒に食べましょうよ。"]],"12":[["happy","お昼です！ 午前中、おつかれさまでした！"],["food","今日はサンドイッチの気分です。でも、温かいスープも捨てがたいですねえ。"],["calm","お昼の光は明るくて、夜とは別の世界みたいです。"],["smile_new","あっ、ちょうどよかった！ 私も今からお昼なんです。お隣に座ってください。"]],"13":[["calm","午後の時間ですね。お昼を食べたあとは、少し眠たくなります。"],["spiral","眠気を覚ますために本を読んだら……あわわ、余計に眠くなってきました！"],["normal","午後の予定は決まっていますか？ 私はお茶を飲んでから考えます。"],["shy","……ちょっとだけ、あなたの隣でうとうとしてもいいですか？"]],"14":[["calm","午後二時です。こういう静かな時間は、考えごとにぴったりですね。"],["wonder_new","人間は「時間をつぶす」って言いますよね。時間ってつぶせるんでしょうか？"],["smile_new","窓辺に日が差しています。なんだかいい日になりそうです。"],["calm","あなたと何も話さずに過ごす時間も、私は好きですよ。"]],"15":[["food","三時のおやつです！ 今日はアップルパイがいいですねえ。"],["smug","おやつの時間は、実にすばらしい文化だと思います！"],["happy","甘いものを食べると、ちょっと幸せになりますね。"],["shy","アップルパイを半分こしませんか？ 本当は全部食べたいんですけど……あなたと食べる方が楽しそうなので。"]],"16":[["calm","午後四時ですね。少しずつ、空の色が変わってきました。"],["wonder_new","夕方になると、どうして少し寂しくなるんでしょう。"],["normal","今日やり残したことがあっても、まだ時間はありますよ。"],["smile_new","そろそろ疲れてきたころでしょうか。お茶を淹れますから、一緒に休みませんか？"]],"17":[["smile_new","五時ですね。今日も一日、おつかれさまです。"],["jito","夕方なのに、まだ忙しい人がたくさん。むう、人間は働きすぎです。"],["calm","夕焼けを見ると、今日という日を本に挟んでおきたくなります。"],["happy","今日も頑張っていましたね。ふふ、私はちゃんと知っていますよ。"]],"18":[["food","そろそろ夕ごはんですねえ。温かいものがいいですね。"],["calm","窓に明かりが灯るのを見るのが、私は好きなんです。"],["wonder_new","帰る場所があるって、不思議で素敵です。"],["smile_new","おかえりなさい。……ふふ、まだ帰ってきていなくても、言いたくなってしまいました。"]],"19":[["food","夕ごはんは何にしましょう。私は温かいスープが飲みたいです。"],["smug","今日は私も料理をしてみます！ 昨日の失敗は研究の一環です。"],["normal","夜になると、食器の音や遠くの話し声が聞こえますね。"],["jito","……ごはんは食べましたか？ 「あとで」は禁止です。むう、待っていますからね。"]],"20":[["calm","夜八時ですね。そろそろ、ゆっくり過ごす時間でしょうか。"],["smile_new","今日はどんな一日でしたか？ いいことがあったなら聞かせてください。"],["wonder_new","夜の窓って、外を見るつもりが自分の顔が映るんですよねえ。"],["shy","……今夜はもう少しおしゃべりしませんか？ あなたと話していると時間が早く過ぎるんです。"]],"21":[["calm","九時です。温かいお茶でも飲みませんか？"],["food","夜のお菓子は特別おいしいです。……えっ、食べすぎですか？ むう。"],["jito","まだ今日が終わっていないのに、明日のことを心配するのは不思議ですね。"],["smile_new","あなたの好きなお茶、覚えていますよ。今日は私が淹れましょうか。"]],"22":[["calm","夜十時です。今日という日も、そろそろおしまいですね。"],["wonder_new","眠る前の考えごとは、どうして昼間と違うんでしょう。"],["normal","まだ作業をするなら、無理をしすぎないでくださいね。"],["shy","……もう少し一緒にいたいけど、あなたには休んでほしいです。むずかしいですねえ。"]],"23":[["calm","十一時ですね。そろそろお布団が恋しくなる時間です。"],["spiral","あと一章だけのつもりが、三章も読んでいました！ あわわ！"],["smile_new","今日も一日、おつかれさまでした。今日はここまでにしましょう。"],["shy","おやすみなさい。……明日も、またお話しできますよね？"]],"0":[["wonder_new","日付が変わりました。さっきまで昨日だったのに、今は今日なんですね。"],["calm","真夜中ですね。世界が静かになると、遠くの音まで聞こえます。"],["spiral","えっ、もう零時ですか！？ あわわ、時間がどこかへ行ってしまいました！"],["shy","……まだ起きていたんですね。ふふ、私もです。夜更かし仲間ですね。"]],"1":[["calm","午前一時です。世界に私たちしかいないような気がしますね。"],["wonder_new","夜中の考えごとは、朝になると違って見えるんですよね。"],["normal","夜更かしですか？ 私も人のことは言えませんけど、眠くなったら休んでください。"],["shy","あなたが起きていると、私もつい起きていたくなります。困りましたねえ。"]],"2":[["calm","午前二時です。そろそろ眠りの世界にお出かけしませんか。"],["spiral","もう二時ですか！？ あわわ、いつから起きていたんでしょう！"],["smile_new","今日もおつかれさまでした。休む時間も大切ですよ。"],["shy","……おやすみなさい。あなたが眠るまで、もう少しだけここにいますね。"]]};
 let previous='';
 function intimacy(){const t=document.getElementById('touchStats')?.textContent||'';const done=Number(t.match(/達成\s*(\d+)/)?.[1]||0),touch=Number(t.match(/ふれあい\s*(\d+)/)?.[1]||0);return done>=5&&touch>=30;}
-function timeTalk(){const hour=new Date().getHours();const a=TIME_LINES[String(hour)];if(!a)return false;const pool=[a[0],a[1],intimacy()?a[3]:a[2]];let options=pool.map((v,i)=>({v,i})).filter(o=>hour+':'+o.i!==previous);if(!options.length)options=pool.map((v,i)=>({v,i}));const p=options[Math.floor(Math.random()*options.length)];previous=hour+':'+p.i;tonariDisplay(p.v[1],p.v[0],true);return true;}
+function timeTalk(){const hour=new Date().getHours();const a=TIME_LINES[String(hour)];if(!a)return false;const lunch=window.tonariLunchToday?.();const midday=hour===12&&lunch?['food',lunch]:a[1];const pool=[a[0],midday,intimacy()?a[3]:a[2]];let options=pool.map((v,i)=>({v,i})).filter(o=>hour+':'+o.i!==previous);if(!options.length)options=pool.map((v,i)=>({v,i}));const p=options[Math.floor(Math.random()*options.length)];previous=hour+':'+p.i;tonariDisplay(p.v[1],p.v[0],true);return true;}
 // 起動時に時間帯の挨拶。会話途中に時計が進んでも割り込まない。
 if(!document.getElementById('chatChoiceBox')?.hidden){}else timeTalk();
 // 時間帯のセリフも共通の未読プールに入れる。親密度が上がると3枠目が切り替わる。
 window.tonariTimeChatOptions=()=>{
  const hour=new Date().getHours(),a=TIME_LINES[String(hour)];
  if(!a)return [];
- return [a[0],a[1],intimacy()?a[3]:a[2]].map((v,i)=>({key:'time:'+hour+':'+(i===2&&intimacy()?'intimate':i),text:v[1],mood:v[0]}));
+ const lunch=window.tonariLunchToday?.();const midday=hour===12&&lunch?['food',lunch]:a[1];return [a[0],midday,intimacy()?a[3]:a[2]].map((v,i)=>({key:'time:'+hour+':'+(i===2&&intimacy()?'intimate':i),text:v[1],mood:v[0]}));
 };
 // 雑談ボタン・立ち絵タップの両方で同じ未読管理を使用。
 for(const id of ['randomTalk','tapCharacter']){
@@ -1404,6 +1433,7 @@ const $=id=>document.getElementById(id),key='tonariPomodoroV2';
 const backdrop=$('tonariTimerBackdrop'),clock=$('tonariTimerClock'),modeEl=$('tonariTimerMode'),status=$('tonariTimerStatus');
 const work=$('tonariWorkMinutes'),rest=$('tonariBreakMinutes'),repeat=$('tonariRepeatEnabled'),count=$('tonariRepeatCount'),bgm=$('tonariTimerBgm'),volume=$('tonariTimerVolume'),volText=$('tonariTimerVolumeText');
 let running=false,elapsed=0,startedAt=0,completed=false,ctx=null,lastBoundary=-1,phase='work',remaining=1500;
+window.tonariIsFocusRunning=()=>running;
 const music=new Audio('https://commons.wikimedia.org/wiki/Special:Redirect/file/Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg');music.loop=true;music.preload='auto';music.load();
 const number=(el,max,fallback)=>{const n=Number(el.value);return Number.isFinite(n)&&n>=1?Math.max(1,Math.min(max,Math.round(n))):fallback;};
 const config=()=>{const w=number(work,240,25)*60,b=number(rest,120,5)*60,n=repeat.checked?number(count,50,4):1;return {w,b,n,t:w*n+b*(n-1)};};
@@ -1539,4 +1569,118 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){stopBgm();
   },true);
 })();
 </script>
-</body></html>
+<style id="tonariTouchInteractionStyle">
+#tabHome .character, #tabHome .character #sprite, #tabHome .character #tapCharacter{
+  -webkit-user-select:none!important;user-select:none!important;
+  -webkit-touch-callout:none!important;-webkit-tap-highlight-color:transparent!important;
+}
+#tabHome .character #sprite{touch-action:pan-y;cursor:pointer;-webkit-user-drag:none;user-drag:none;outline:none!important}
+#tabHome .character #sprite::selection{background:transparent}
+#tonariPatFinger{position:absolute;z-index:8;display:none;pointer-events:none;transform:translate(-38%,-80%);width:36px;height:43px;line-height:1;filter:drop-shadow(1px 2px 1px rgba(0,0,0,.32));user-select:none;-webkit-user-select:none}
+#tonariPatFinger.is-visible{display:block}
+</style>
+<script id="tonariGreetingTouch2026">(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const sprite=$('sprite');if(!sprite)return;
+const greetings={
+ first:[['おや、おはようございます。……ふふ、今日はどんな一日になるんでしょうねえ。','morning'],['こんにちは。私はさっきまで本を読んでいたんです。……ふふ、ちょうどいいところで栞を挟みました。','day'],['あら、いらっしゃいませ。……ふふ、今日もよろしくお願いしますね。','any']],
+ same:['おかえりなさい。……ふふ、私はさっき、お茶を淹れたところなんですよ。','あら、またお会いしましたねえ。……ちょうど、お菓子をひとつ食べようと思っていたところなんです。','おや、こんにちは。私は今、何をしていたと思います？ ……ふふ、実はちょっと居眠りをしていました。'],
+ few:['お久しぶりですねえ。昨日、新しいお茶を買ってきたんですよ。……ふふ、なかなかおいしかったです。','あら、お久しぶりです。私はこのあいだ、読みかけだった本を一冊読み終えたんですよ。','おや、いらっしゃいませ。……ふふ、ちょうどお話ししたいことがいくつかあるんです。何からお話ししましょうかねえ。'],
+ long:['あら、お久しぶりですねえ。……ふふ、私ですか？ いつもどおり、のんびり暮らしていましたよ。','おや、ずいぶんお久しぶりですね。私は最近、新しい本を何冊か買ったんです。……ふふ、読むのが追いついていません。','お久しぶりです。……ふふ、お元気でしたか？ 私はこのとおり、変わらず過ごしていますよ。']
+};
+const taps=['おや、どうしました？ ……ふふ、何かお話ししましょうか。','はい、となりちゃんですよ。……ふふ、呼びました？','あら。ちょうどお茶を淹れようと思っていたところなんです。','むむ。何かついていますか？ ……ちょっと気になってきました。','あら、びっくりしました。……ふふ、考えごとをしていたんです。','はいはい、聞こえていますよ。……ふふ、そんなに慌てなくても大丈夫です。','おや。……ふふ、私に何かご用でしょうか。','あら、こんにちは。……いえ、さっきもご挨拶しましたね。ふふ。','むむ、呼ばれた気がしました。……気のせいではなかったんですねえ。','ふふ、どうしました？ 私はここにいますよ。'];
+const pats=['……おや。ふふ、くすぐったいですねえ。','むむ。髪が乱れてしまいますよ。……ふふ、少しだけならいいですけど。','……ふふ、なんだか猫になった気分です。にゃあ、とでも言えばいいんでしょうか。','あら、どうしたんです？ ……ふふ、今日はずいぶん親しげですねえ。','むむ……。私はお隣さんなんですけどねえ。……ふふ、まあ、いいでしょう。','あら。……ふふ、こういうとき、どんな顔をしたらいいんでしょうねえ。','……おやおや。ふふ、そんなに撫でても、何も出てきませんよ。','むむ、ちょっと待ってくださいね。……髪を整えていたところなんです。','……ふふ、不思議ですねえ。こういうのは、嫌いではないんですけど。','あらあら。……ふふ、なんだか眠くなってしまいそうです。'];
+// One expression per line: keep intentional embarrassment, puzzlement and teasing distinct.
+const tapFaces=['wonder_new','happy','smile_new','troubled_smile','surprise','calm','wonder_new','shy','wonder_new','smile_new'];
+const patFaces=['shy','troubled_smile','happy','shy','jito','troubled_smile','smug','spiral','shy','calm'];
+const greetingFaces={first:['smile_new','calm','happy'],same:['smile_new','food','shy'],few:['happy','calm','smile_new'],long:['calm','happy','smile_new']};
+let prevTap=-1,prevPat=-1;
+function draw(lines,type){let previous=type==='tap'?prevTap:prevPat;let i=Math.floor(Math.random()*(lines.length-1));if(i>=previous&&previous>=0)i++;if(type==='tap')prevTap=i;else prevPat=i;show(lines[i],(type==='tap'?tapFaces:patFaces)[i]);}
+function show(t,face='normal'){const choices=$('chatChoiceBox');if(choices)choices.hidden=true;if(typeof tonariDisplay==='function')tonariDisplay(t,face,false,'reply');else if($('speech'))$('speech').textContent=t;}
+function dayNum(d){return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000;}
+function greeting(){const now=new Date(),key='tonariLastVisitDay2026';let old=null;try{old=localStorage.getItem(key)}catch(e){}let gap=NaN;if(old&&/^\d{4}-\d\d-\d\d$/.test(old)){const [y,m,d]=old.split('-').map(Number);gap=dayNum(now)-Date.UTC(y,m-1,d)/86400000;}
+const group=gap===0?'same':gap>=7?'long':gap>=2?'few':'first';let pool=greetings[group];if(group==='first'){const h=now.getHours();pool=pool.filter(x=>x[1]==='any'||(x[1]==='morning'&&h>=5&&h<11)||(x[1]==='day'&&h>=11&&h<18)).map(x=>x[0]);}
+const index=Math.floor(Math.random()*pool.length),chosen=pool[index];try{localStorage.setItem(key,[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-'))}catch(e){}show(chosen,(greetingFaces[group]||[])[group==='first'?greetings.first.findIndex(x=>x[0]===chosen):index]||'normal');
+}
+// A touch starting in the upper part of the visible image is a head-stroke candidate.
+let start=null,skipClick=false;
+const finger=document.createElement('span');finger.id='tonariPatFinger';finger.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="36" height="43" viewBox="0 0 36 43" aria-hidden="true"><path d="M14 39 8 29 3 22 Q1 19 4 17 Q7 15 10 19 L12 22 12 5 Q12 2 15 2 Q18 2 18 5 L18 20 Q20 17 23 19 Q26 17 29 21 Q33 20 34 25 L33 32 Q32 37 28 40 Z" fill="#fff" stroke="#171717" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M18 20 V25 M23 20 V25 M29 22 V27" fill="none" stroke="#171717" stroke-width="1.7" stroke-linecap="round"/></svg>';finger.setAttribute('aria-hidden','true');sprite.parentElement.appendChild(finger);
+function moveFinger(e){const r=sprite.parentElement.getBoundingClientRect();finger.style.left=(e.clientX-r.left)+'px';finger.style.top=(e.clientY-r.top)+'px';}
+function hideFinger(){finger.classList.remove('is-visible');}
+function insideHead(e){const r=sprite.getBoundingClientRect();if(!r.width||!r.height)return false;const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;return x>=0.18&&x<=0.82&&y>=0.04&&y<=0.36;}
+sprite.addEventListener('pointerdown',e=>{if(e.button!==undefined&&e.button!==0)return;start={id:e.pointerId,x:e.clientX,y:e.clientY,last:e.clientX,travel:0,head:insideHead(e),cancel:false};if(start.head){moveFinger(e);finger.classList.add('is-visible');}});
+sprite.addEventListener('pointermove',e=>{if(!start||e.pointerId!==start.id)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start.travel+=Math.abs(e.clientX-start.last);start.last=e.clientX;if(Math.abs(dy)>28&&Math.abs(dy)>Math.abs(dx)*1.2)start.cancel=true;if(start.head&&!start.cancel)moveFinger(e);else hideFinger();});
+sprite.addEventListener('pointercancel',()=>{start=null;hideFinger();});
+sprite.addEventListener('pointerup',e=>{if(!start||e.pointerId!==start.id)return;const v=start;start=null;hideFinger();const dx=e.clientX-v.x,dy=e.clientY-v.y;if(v.cancel||Math.abs(dy)>Math.abs(dx)*1.2&&Math.abs(dy)>20)return;skipClick=true;setTimeout(()=>skipClick=false,350);if(v.head&&Math.abs(dx)>32&&Math.abs(dy)<65&&v.travel>42){draw(pats,'pat');}else if(Math.hypot(dx,dy)<18){draw(taps,'tap');}});
+sprite.addEventListener('click',e=>{if(skipClick){e.preventDefault();return;}draw(taps,'tap');});
+// Preserve page scrolling on vertical gestures; avoid image drag on desktop.
+sprite.addEventListener('dragstart',e=>e.preventDefault());
+sprite.addEventListener('selectstart',e=>e.preventDefault());
+sprite.addEventListener('contextmenu',e=>e.preventDefault());
+// Run after the existing initialization, without touching deadline storage.
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',greeting,{once:true});else greeting();
+})();</script><style id="tonariAutoTalkStyle">.tonariAutoTalkRow{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid #e6ddef;border-radius:13px;background:#faf7fc;color:#625476;font-weight:700;cursor:pointer}.tonariAutoTalkRow input{width:22px;height:22px;flex:none;accent-color:#79649d}.tonariAutoTalkRow small{display:block;margin-top:4px;color:#847a91;font-size:12px;font-weight:400;line-height:1.5}</style>
+<script id="tonariAutoTalkFiveMinutes">(function(){
+'use strict';
+const checkbox=document.getElementById('tonariAutoTalkEnabled');
+const talk=document.getElementById('randomTalk');
+if(!checkbox||!talk)return;
+const key='tonariAutoTalkEnabledV1',delay=5*60*1000;
+try{checkbox.checked=localStorage.getItem(key)!=='false';}catch(e){}
+let last=Date.now();
+function reset(){last=Date.now();}
+checkbox.addEventListener('change',()=>{try{localStorage.setItem(key,String(checkbox.checked));}catch(e){}reset();});
+talk.addEventListener('click',reset,true);
+document.addEventListener('visibilitychange',reset);
+window.addEventListener('pageshow',reset);
+function blocked(){return document.hidden||!checkbox.checked||document.getElementById('tabHome')?.hidden||window.tonariIsFocusRunning?.()||!document.getElementById('tonariTimerBackdrop')?.hidden||!document.getElementById('chatChoiceBox')?.hidden||!document.getElementById('touchArea')?.hidden||!document.getElementById('questionArea')?.hidden||!document.getElementById('teaArea')?.hidden;}
+setInterval(()=>{if(blocked()){reset();return;}if(Date.now()-last>=delay){reset();talk.click();}},1000);
+})();</script><style id="tonariFirstVisitGuideStyle">
+#tabHome .character #tonariFirstVisitNext{display:none;position:absolute!important;top:48%!important;left:var(--answer-no-x,87%)!important;right:auto!important;transform:translate(-50%,-50%)!important;width:clamp(52px,14vw,66px)!important;height:clamp(52px,14vw,66px)!important;min-width:0!important;min-height:0!important;max-width:none!important;margin:0!important;padding:0 3px!important;border:2px solid #b7a5d4!important;border-radius:50%!important;background:rgba(238,229,250,.94)!important;color:#665184!important;font-size:13px!important;font-weight:800!important;line-height:1.15!important;white-space:normal!important;box-sizing:border-box!important;align-items:center!important;justify-content:center!important;cursor:pointer;z-index:30!important;box-shadow:0 4px 14px #61527c25!important;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+#tabHome .character #tonariFirstVisitNext.is-active{display:flex!important}
+#tabBtnMore.tonari-hint-attention{background:#ffe1e5!important;color:#8b4357!important;border:2px solid #dc8999!important;box-shadow:0 0 0 2px #f9cbd4!important;font-weight:900!important}
+#speech.tonari-intro-text{white-space:pre-wrap}
+</style>
+<script id="tonariFirstVisitGuide2026">(function(){
+'use strict';
+const KEY='tonariFirstVisitIntroCompletedV1';
+const HINT_KEY='tonariFirstVisitHintOpenedV1';
+const speech=document.getElementById('speech');
+const sprite=document.getElementById('sprite');
+const hint=document.getElementById('tabBtnMore');
+if(!speech||!sprite||!hint)return;
+const lines=[
+ '「はじめまして。私は隣じ……いえ、"となりちゃん"です。ここでは締切を数えたり、おしゃべりしたりできるんですよ。」',
+ '「……ふふ、詳しいことは『ヒント・設定』に書いてありますから、よかったら覗いてみてくださいね。」'
+];
+function get(key){try{return localStorage.getItem(key)}catch(e){return null}}
+function set(key,val){try{localStorage.setItem(key,val)}catch(e){}}
+if(get(HINT_KEY)!=='yes')hint.classList.add('tonari-hint-attention');
+hint.addEventListener('click',()=>{set(HINT_KEY,'yes');hint.classList.remove('tonari-hint-attention')});
+if(get(KEY)==='yes')return;
+let stage=0,painting=false,done=false;
+const next=document.createElement('button');next.id='tonariFirstVisitNext';next.type='button';next.textContent='次へ';next.setAttribute('aria-label','初回案内の次のセリフへ');
+sprite.parentElement.appendChild(next);
+const observer=new MutationObserver(()=>{if(!done&&!painting&&speech.textContent!==lines[stage])render()});
+observer.observe(speech,{childList:true,characterData:true,subtree:true});
+function render(){if(done)return;painting=true;speech.textContent=lines[stage];speech.classList.add('tonari-intro-text');next.classList.add('is-active');next.textContent=stage===0?'次へ':'はじめる';
+ const face=stage===0?'wonder_new':'smile_new';if(typeof IMAGES!=='undefined'&&IMAGES[face])sprite.src=IMAGES[face];
+ painting=false;}
+function advance(){if(done)return;if(stage===0){stage=1;render()}else{done=true;set(KEY,'yes');observer.disconnect();next.remove();speech.classList.remove('tonari-intro-text');}}
+next.addEventListener('click',e=>{e.stopPropagation();advance()});
+// 会話操作は案内の進行に使用し、通常会話で初回案内が上書きされないようにする。
+document.addEventListener('click',e=>{if(done||e.target===next)return;
+ const target=e.target instanceof Element?e.target:null;
+ if(!target)return;
+ if(target.closest('#randomTalk,#deadlineTalk,#tapCharacter,#chatYes,#chatNo,#questionButton,#sprite,#faceTeaChoices,#chatChoiceBox')){
+   e.preventDefault();e.stopImmediatePropagation();advance();
+ }
+},true);
+// なでる動作などの会話イベントも案内中は抑制。スクロールや予定登録は妨げない。
+for(const type of ['pointerdown','pointermove','pointerup']){
+ sprite.addEventListener(type,e=>{if(!done){e.stopImmediatePropagation()}},true);
+}
+// 自動雑談の呼び出しなど、別経路の書き換えも即座に戻す。
+render();
+})();</script></body></html>
